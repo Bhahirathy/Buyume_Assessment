@@ -14,27 +14,17 @@ useEffect(()=>{
     console.log(err)
   })
 },[])
-// const handleSearch=(e)=>{
-//   const search=e.target.value
-//   const newFilter=data.filter((value)=>{
-//     return value.data.includes(search)
-//   })
-//   if(search.length===0){
-//     setSearchTerm([])
-//   }else{
-//   setSearchTerm(newFilter)
-// }
-// }
 
   return (
     <div className="App">
-      <input type="text" onChange={(e)=>setValue(e.target.value)} ></input>
+      <input style={{alignItems:"center"}} type="text" onChange={(e)=>setValue(e.target.value)} ></input>
       <button onClick={(e)=>{setSearchTerm(value)}}>search</button>
       {data.filter((value)=>{
         const sentence=value.title
+        const body=value.body
         if(searchTerm===""){
           return value
-        }else if(sentence.includes(searchTerm)){
+        }else if(sentence.includes(searchTerm) && body.includes(searchTerm)){
           return value
         }
       })
@@ -52,3 +42,5 @@ useEffect(()=>{
 }
 
 export default Post;
+
+
