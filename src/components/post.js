@@ -24,7 +24,7 @@ useEffect(()=>{
         const body=value.body
         if(searchTerm===""){
           return value
-        }else if(sentence.includes(searchTerm) && body.includes(searchTerm)){
+        }else if(sentence.includes(searchTerm)){
           return value
         }
       })
@@ -42,5 +42,6 @@ useEffect(()=>{
 }
 
 export default Post;
+
 
 
